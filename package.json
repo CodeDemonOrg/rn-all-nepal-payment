@@ -1,0 +1,36 @@
+{
+  "name": "rn-all-nepal-payment",
+  "version": "1.0.0",
+  "description": "All in one payment gateway",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodeDemonOrg/rn-all-nepal-payment.git"
+  },
+  "keywords": [
+    "react",
+    "react-native",
+    "react-component",
+    "ios",
+    "android",
+    "payment-gateway",
+    "esew",
+    "khalti",
+    "fintech"
+  ],
+  "author": "CodeDemon <codedemonorg@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "metro-react-native-babel-preset": "^0.57.0"
+  },
+  "dependencies": {
+    "prop-types": "^15.7.2"
+  },
+  "bugs": {
+    "url": "https://github.com/CodeDemonOrg/rn-all-nepal-payment.git/issues"
+  },
+  "homepage": "https://github.com/CodeDemonOrg/rn-all-nepal-payment.git#readme"
+}
