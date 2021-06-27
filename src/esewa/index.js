@@ -5,8 +5,8 @@ import {
 } from 'react-native';
 
 import EsewaPayment from './components/esewPayment';
-import { sourceGenerator } from './components/htmlGenerator';
-import { SUCCESS_URL, FAILED_URL } from './components/constants';
+import { sourceGenerator } from './helpers/htmlGenerator';
+import { SUCCESS_URL, FAILED_URL } from './helpers/constants';
 
 const index = props => {
   const [url, setUrl] = React.useState('');
