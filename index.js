@@ -1,1 +1,2 @@
-export * from './src';
+import Esewa from './src/esewa';
+export default Esewa;
