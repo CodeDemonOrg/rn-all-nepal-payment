@@ -1,13 +1,13 @@
 import React from 'react';
 import { ActivityIndicator, View } from 'react-native';
 
-const Loader = React.useMemo(() => {
+const Loader = () => {
   return (
     <View style={styles.indicator}>
       <ActivityIndicator color={'red'} size={'large'} />
     </View>
   )
-});
+};
 
 
 const styles = {

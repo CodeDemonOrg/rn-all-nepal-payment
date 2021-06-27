@@ -4,7 +4,7 @@ import {
   SafeAreaView
 } from 'react-native';
 
-import EsewaPayment from './components/esewPayment';
+import EsewaPayment from './components/esewaPayment';
 import { sourceGenerator } from './helpers/htmlGenerator';
 import { SUCCESS_URL, FAILED_URL } from './helpers/constants';
 

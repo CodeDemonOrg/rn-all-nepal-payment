@@ -1,2 +1,1 @@
-import Esewa from './esewa';
-export default Esewa;
+export { default } from './esewa';

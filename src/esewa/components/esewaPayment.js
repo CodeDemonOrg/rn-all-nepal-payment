@@ -3,7 +3,7 @@ import { WebView } from 'react-native-webview';
 
 import Loader from './loader';
 
-const EsewaPayment = React.useMemo(({
+const EsewaPayment = ({
   source,
   LoadingComponent,
   onNavigationStateChange
@@ -27,7 +27,7 @@ const EsewaPayment = React.useMemo(({
       renderLoading={!!LoadingComponent ? LoadingComponent : LoadIndicatorView}
     />
   )
-})
+}
 
 
 export default EsewaPayment;
