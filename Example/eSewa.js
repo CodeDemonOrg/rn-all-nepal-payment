@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Text, SafeAreaView } from 'react-native';
 
-import Esewa from './../index';
+import {EsewaSdk} from './../src';
 
 
 const eSewa = () => {
@@ -23,7 +23,7 @@ const eSewa = () => {
       />
       {response?.token && <Text>{`ref id: ${response.token}`}</Text>}
 
-      <Esewa
+      <EsewaSdk
         amt={100}
         taxAmt={5}
         totalAmt={105}
@@ -31,6 +31,8 @@ const eSewa = () => {
         isVisible={isVisible}
         onPaymentComplete={_onPaymentComplete}
         pid={"ee2c3ca1-696b-4cc5-a6be-2c40d929d43"}
+        faliureURL={`http://merchant.com.np/page/esewa_payment_failed?q=fu`}
+        successURL={`http://merchant.com.np/page/esewa_payment_success?q=su`}
       />
     </SafeAreaView>
   );

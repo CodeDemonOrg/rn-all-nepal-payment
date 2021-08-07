@@ -11,9 +11,9 @@ import { styles } from './../common/styles';
 import EsewaPayment from './../common/Webview';
 import { sourceGenerator } from './helpers/htmlGenerator';
 
- const EsewaSdk = props => {
+export const EsewaSdk = props => {
   const [url, setUrl] = React.useState('');
-  const { successURL, faliureURL,onPaymentComplete } = props;
+  const { successURL, faliureURL, onPaymentComplete } = props;
 
   React.useEffect(() => {
     _handlePaymetProcess();
@@ -22,7 +22,7 @@ import { sourceGenerator } from './helpers/htmlGenerator';
 
   const _handlePaymetProcess = () => {
     try {
-
+console.log({url,faliureURL})
       if (url === faliureURL) {
         return onPaymentComplete({
           message: `Sorry, your payment process could not be completed`
@@ -39,6 +39,7 @@ import { sourceGenerator } from './helpers/htmlGenerator';
       }
 
     } catch (err) {
+console.log({err})
       return onPaymentComplete({
         message: `Sorry, your payment process could not be completed`
       });
@@ -85,7 +86,6 @@ import { sourceGenerator } from './helpers/htmlGenerator';
   );
 }
 
-export default EsewaSdk;
 EsewaSdk.propTypes = {
   amt: PropTypes.number.isRequired,
   psc: PropTypes.number.isRequired,

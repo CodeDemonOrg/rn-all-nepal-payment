@@ -11,7 +11,7 @@ import { styles } from './../common/styles';
 import ConnectIpsPayment from './../common/Webview';
 import { sourceGenerator } from './helpers/htmlGenerator';
 
-const CipsSdk = props => {
+export const CipsSdk = props => {
   const [url, setUrl] = React.useState('');
   const {
     appId,
@@ -104,8 +104,6 @@ const CipsSdk = props => {
     </Modal>
   );
 }
-
-export default CipsSdk;
 
 CipsSdk.propTypes = {
   appId: PropTypes.string.isRequired,

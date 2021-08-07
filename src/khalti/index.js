@@ -9,7 +9,7 @@ import {
 import { styles } from './../common/styles';
 import KhaltiWebView from './components/WebView';
 
-const KhatiSdk = ({
+export const KhatiSdk = ({
   amount,
   publicKey,
   isVisible,
@@ -49,5 +49,3 @@ KhatiSdk.propTypes = {
   onPaymentComplete: PropTypes.func.isRequired,
   paymentPreference: PropTypes.array.isRequired,
 };
-
-export default KhatiSdk;
