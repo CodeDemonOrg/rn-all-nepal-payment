@@ -3,7 +3,7 @@ import { WebView } from 'react-native-webview';
 
 import Loader from './loader';
 
-const EsewaPayment = ({
+const Payment = ({
   source,
   LoadingComponent,
   onNavigationStateChange
@@ -30,7 +30,7 @@ const EsewaPayment = ({
 }
 
 
-export default EsewaPayment;
+export default Payment;
 
 const style = {
   flex: {
