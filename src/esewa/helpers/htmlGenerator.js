@@ -1,5 +1,3 @@
-import { SUCCESS_URL, FAILED_URL } from './constants';
-
 export const sourceGenerator = ({
   amt,
   taxAmt,
@@ -7,6 +5,8 @@ export const sourceGenerator = ({
   psc = '0',
   pdc = '0',
   pid,
+  successURL,
+  faliureURL,
   env = `EPAYTEST`
 }) => `<html>
   <body>
@@ -23,12 +23,12 @@ export const sourceGenerator = ({
         type='hidden'
       />
       <input
-        value='${SUCCESS_URL}'
+        value='${successURL}'
         type='hidden'
         name='su'
       />
       <input
-        value='${FAILED_URL}'
+        value='${faliureURL}'
         type='hidden'
         name='fu'
       />

@@ -24,7 +24,7 @@ export const CipsSdk = props => {
     remarks,
     currency,
     isVisible,
-    failedURL,
+    faliureURL,
     successURL,
     merchantId,
     particulars,
@@ -46,7 +46,7 @@ export const CipsSdk = props => {
         let data = { token: ref[1] };
         return onPaymentComplete(data);
 
-      } else if (url.startsWith(failedURL)) {
+      } else if (url.startsWith(faliureURL)) {
         return onPaymentComplete({
           message: `Sorry, your payment process could not be completed`
         });
@@ -109,7 +109,7 @@ CipsSdk.propTypes = {
   remarks: PropTypes.string.isRequired,
   currency: PropTypes.string.isRequired,
   isVisible: PropTypes.string.isRequired,
-  failedURL: PropTypes.string.isRequired,
+  faliureURL: PropTypes.string.isRequired,
   successURL: PropTypes.string.isRequired,
   merchantId: PropTypes.string.isRequired,
   particulars: PropTypes.string.isRequired,

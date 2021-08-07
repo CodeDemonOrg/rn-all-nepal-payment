@@ -12,7 +12,7 @@ import { sourceGenerator } from './helpers/htmlGenerator';
 
 export const EsewaSdk = props => {
   const [url, setUrl] = React.useState('');
-  const { successURL, failedURL } = props;
+  const { successURL, faliureURL } = props;
 
   React.useEffect(() => {
     _handlePaymetProcess();
@@ -22,7 +22,7 @@ export const EsewaSdk = props => {
   const _handlePaymetProcess = () => {
     try {
 
-      if (url === failedURL) {
+      if (url === faliureURL) {
         return props.onPaymentComplete({
           message: `Sorry, your payment process could not be completed`
         });
@@ -63,7 +63,9 @@ export const EsewaSdk = props => {
                 pid: props.pid,
                 env: props.env,
                 taxAmt: props.taxAmt,
-                totalAmt: props.totalAmt
+                successURL:successURL,
+                faliureURL:faliureURL,
+                totalAmt: props.totalAmt,
               })
             }}
             onNavigationStateChange={_onNavigationStateChange}
@@ -84,7 +86,7 @@ EsewaSdk.propTypes = {
   taxAmt:PropTypes.number.isRequired,
   totalAmt: PropTypes.number.isRequired,
   successURL:PropTypes.string.isRequired,
-  failedURL :PropTypes.string.isRequired,
+  faliureURL :PropTypes.string.isRequired,
   onPaymentComplete:PropTypes.func.isRequired
 };
 
