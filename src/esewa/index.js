@@ -4,12 +4,12 @@ import {
   SafeAreaView
 } from 'react-native';
 
-import EsewaPayment from './components/esewaPayment';
+import EsewaPayment from 'common/payment';
 import { sourceGenerator } from './helpers/htmlGenerator';
-import { SUCCESS_URL, FAILED_URL } from './helpers/constants';
 
 const index = props => {
   const [url, setUrl] = React.useState('');
+  const  { successURL, failedURL } =props;
 
   React.useEffect(() => {
     _handlePaymetProcess();
@@ -19,12 +19,12 @@ const index = props => {
   const _handlePaymetProcess = () => {
     try {
 
-      if (url === FAILED_URL) {
+      if (url === failedURL) {
         return props.onPaymentComplete({
           message: `Sorry, your payment process could not be completed`
         });
 
-      } else if (url.startsWith(SUCCESS_URL)) {
+      } else if (url.startsWith(successURL)) {
 
         const splits = url.split('&');
         const ref = splits[splits.length - 1].split('=');
