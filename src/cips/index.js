@@ -27,7 +27,7 @@ const index = props => {
     merchantId,
     particulars,
     onPaymentComplete
-  }=props;
+  } = props;
 
   React.useEffect(() => {
     _handlePaymetProcess();
@@ -44,7 +44,7 @@ const index = props => {
         let data = { token: ref[1] };
         return onPaymentComplete(data);
 
-      }else if (url.startsWith(failedURL)) {
+      } else if (url.startsWith(failedURL)) {
         return onPaymentComplete({
           message: `Sorry, your payment process could not be completed`
         });
@@ -95,31 +95,30 @@ export default index;
 const styles = {
   flex: {
     flex: 1,
-    backgroundColor: 'white'
   }
 }
 
 
 
 index.propTypes = {
-  appId:PropTypes.string.isRequired,
-  txnId:PropTypes.string.isRequired,
-  refId:PropTypes.string.isRequired,
-  token:PropTypes.string.isRequired,
-  txnAmt:PropTypes.string.isRequired,
-  baseUrl:PropTypes.string.isRequired,
-  txnDate:PropTypes.string.isRequired,
-  appName:PropTypes.string.isRequired,
-  remarks:PropTypes.string.isRequired,
-  currency:PropTypes.string.isRequired,
-  isVisible:PropTypes.string.isRequired,
-  failedURL:PropTypes.string.isRequired,
-  successURL:PropTypes.string.isRequired,
-  merchantId:PropTypes.string.isRequired,
-  particulars:PropTypes.string.isRequired,
-  onPaymentComplete:PropTypes.func
+  appId: PropTypes.string.isRequired,
+  txnId: PropTypes.string.isRequired,
+  refId: PropTypes.string.isRequired,
+  token: PropTypes.string.isRequired,
+  txnAmt: PropTypes.string.isRequired,
+  baseUrl: PropTypes.string.isRequired,
+  txnDate: PropTypes.string.isRequired,
+  appName: PropTypes.string.isRequired,
+  remarks: PropTypes.string.isRequired,
+  currency: PropTypes.string.isRequired,
+  isVisible: PropTypes.string.isRequired,
+  failedURL: PropTypes.string.isRequired,
+  successURL: PropTypes.string.isRequired,
+  merchantId: PropTypes.string.isRequired,
+  particulars: PropTypes.string.isRequired,
+  onPaymentComplete: PropTypes.func
 };
 
 index.defaultProps = {
-  currency:'NPR'
+  currency: 'NPR'
 };

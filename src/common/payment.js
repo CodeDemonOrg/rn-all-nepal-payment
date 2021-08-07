@@ -6,7 +6,7 @@ import Loader from './loader';
 const Payment = ({
   source,
   LoadingComponent,
-  onNavigationStateChange
+  ...props
 }) => {
 
   const LoadIndicatorView = () =>
@@ -14,6 +14,7 @@ const Payment = ({
 
   return (
     <WebView
+      {...props}
       source={source}
       domStorageEnabled
       javaScriptEnabled
@@ -23,7 +24,6 @@ const Payment = ({
       swipeDirection={['up', 'down']}
       showsVerticalScrollIndicator={false}
       showsHorizontalScrollIndicator={false}
-      onNavigationStateChange={onNavigationStateChange}
       renderLoading={!!LoadingComponent ? LoadingComponent : LoadIndicatorView}
     />
   )
