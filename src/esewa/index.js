@@ -10,7 +10,7 @@ import { styles } from 'common/styles';
 import EsewaPayment from 'common/Webview';
 import { sourceGenerator } from './helpers/htmlGenerator';
 
-const EsewaSdk = props => {
+export const EsewaSdk = props => {
   const [url, setUrl] = React.useState('');
   const { successURL, failedURL } = props;
 
@@ -73,10 +73,8 @@ const EsewaSdk = props => {
     </Modal>
   );
 }
+
 export default EsewaSdk;
-
-
-
 EsewaSdk.propTypes = {
   amt: PropTypes.number.isRequired,
   psc: PropTypes.number.isRequired,

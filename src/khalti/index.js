@@ -9,7 +9,7 @@ import {
 import { styles } from 'common/styles';
 import KhaltiWebView from './components/WebView';
 
-const KhatiSdk = ({
+export const KhatiSdk = ({
   amount,
   publicKey,
   isVisible,
