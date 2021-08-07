@@ -10,7 +10,7 @@ import { styles } from './../common/styles';
 import ConnectIpsPayment from './../common/Webview';
 import { sourceGenerator } from './helpers/htmlGenerator';
 
-export const CipsSdk = props => {
+const CipsSdk = props => {
   const [url, setUrl] = React.useState('');
   const {
     appId,

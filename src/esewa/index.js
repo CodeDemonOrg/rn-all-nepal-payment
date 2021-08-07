@@ -10,9 +10,9 @@ import { styles } from './../common/styles';
 import EsewaPayment from './../common/Webview';
 import { sourceGenerator } from './helpers/htmlGenerator';
 
-export const EsewaSdk = props => {
+ const EsewaSdk = props => {
   const [url, setUrl] = React.useState('');
-  const { successURL, faliureURL } = props;
+  const { successURL, faliureURL,onPaymentComplete } = props;
 
   React.useEffect(() => {
     _handlePaymetProcess();
@@ -23,7 +23,7 @@ export const EsewaSdk = props => {
     try {
 
       if (url === faliureURL) {
-        return props.onPaymentComplete({
+        return onPaymentComplete({
           message: `Sorry, your payment process could not be completed`
         });
 
@@ -33,12 +33,12 @@ export const EsewaSdk = props => {
         const ref = splits[splits.length - 1].split('=');
         const amt = splits[splits.length - 2].split('=');
         let data = { token: ref[1], amount: Math.round(amt[1]) };
-        return props.onPaymentComplete(data);
+        return onPaymentComplete(data);
 
       }
 
     } catch (err) {
-      return props.onPaymentComplete({
+      return onPaymentComplete({
         message: `Sorry, your payment process could not be completed`
       });
     }
