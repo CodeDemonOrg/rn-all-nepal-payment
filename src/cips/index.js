@@ -66,6 +66,7 @@ const CipsSdk = props => {
   return (
     <Modal
       visible={isVisible}
+      animationType={'slide'}
     >
       <View style={styles.container}>
         <SafeAreaView style={styles.safeAreaView}>
@@ -111,7 +112,7 @@ CipsSdk.propTypes = {
   successURL: PropTypes.string.isRequired,
   merchantId: PropTypes.string.isRequired,
   particulars: PropTypes.string.isRequired,
-  onPaymentComplete: PropTypes.func
+  onPaymentComplete: PropTypes.func.isRequired
 };
 
 CipsSdk.defaultProps = {

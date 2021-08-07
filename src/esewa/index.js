@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   View,
   Modal,
@@ -48,7 +49,8 @@ const EsewaSdk = props => {
 
   return (
     <Modal
-      visible={props.isVisible}
+    animationType={'slide'}
+    visible={props.isVisible}
     >
       <View style={styles.container}>
         <SafeAreaView style={styles.safeAreaView}>
@@ -72,3 +74,22 @@ const EsewaSdk = props => {
   );
 }
 export default EsewaSdk;
+
+
+
+EsewaSdk.propTypes = {
+  amt: PropTypes.number.isRequired,
+  psc: PropTypes.number.isRequired,
+  pdc: PropTypes.number.isRequired,
+  pid: PropTypes.number.isRequired,
+  env: PropTypes.string.isRequired,
+  taxAmt:PropTypes.number.isRequired,
+  totalAmt: PropTypes.number.isRequired,
+  successURL:PropTypes.string.isRequired,
+  failedURL :PropTypes.string.isRequired,
+  onPaymentComplete:PropTypes.func.isRequired
+};
+
+EsewaSdk.defaultProps = {
+  currency: 'NPR'
+};
