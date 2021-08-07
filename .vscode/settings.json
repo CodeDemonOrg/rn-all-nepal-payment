@@ -1,0 +1,10 @@
+{
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2,
+    "files.trimTrailingWhitespace": true,
+    "editor.autoIndent": "none",
+    "prettier.singleQuote": true,
+    "files.insertFinalNewline": true,
+    "javascript.updateImportsOnFileMove.enabled": "always"
+  }
+  

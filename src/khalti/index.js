@@ -20,8 +20,8 @@ export const KhatiSdk = ({
   paymentPreference,
 }) => (
   <Modal
-  visible={isVisible}
-  animationType={'slide'}
+    visible={isVisible}
+    animationType={'slide'}
   >
     <View style={styles.container}>
       <SafeAreaView style={styles.safeAreaView}>

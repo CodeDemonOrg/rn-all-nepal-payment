@@ -65,7 +65,7 @@ export const CipsSdk = props => {
     setUrl(state.url)
 
 
-  const _onClose = () => 
+  const _onClose = () =>
     onPaymentComplete({
       message: `Payment process interrupted`
     });
@@ -77,9 +77,9 @@ export const CipsSdk = props => {
     >
       <View style={styles.container}>
         <SafeAreaView style={styles.safeAreaView}>
-        <CloseIcon 
-         onClose={_onClose}
-         />
+          <CloseIcon
+            onClose={_onClose}
+          />
           <ConnectIpsPayment
             source={{
               html: sourceGenerator({
