@@ -6,6 +6,7 @@ import {
   SafeAreaView
 } from 'react-native';
 
+import CloseIcon from './../common/Close';
 import { styles } from './../common/styles';
 import EsewaPayment from './../common/Webview';
 import { sourceGenerator } from './helpers/htmlGenerator';
@@ -44,6 +45,11 @@ import { sourceGenerator } from './helpers/htmlGenerator';
     }
   }
 
+  const _onClose = () => 
+    onPaymentComplete({
+      message: `Payment process interrupted`
+    });
+
   const _onNavigationStateChange = (state) =>
     setUrl(state.url)
 
@@ -54,6 +60,9 @@ import { sourceGenerator } from './helpers/htmlGenerator';
     >
       <View style={styles.container}>
         <SafeAreaView style={styles.safeAreaView}>
+         <CloseIcon 
+         onClose={_onClose}
+         />
           <EsewaPayment
             source={{
               html: sourceGenerator({

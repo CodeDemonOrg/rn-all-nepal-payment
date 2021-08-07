@@ -6,6 +6,7 @@ import {
   SafeAreaView
 } from 'react-native';
 
+import CloseIcon from './../common/Close';
 import { styles } from './../common/styles';
 import ConnectIpsPayment from './../common/Webview';
 import { sourceGenerator } from './helpers/htmlGenerator';
@@ -63,6 +64,12 @@ const CipsSdk = props => {
   const _onNavigationStateChange = (state) =>
     setUrl(state.url)
 
+
+  const _onClose = () => 
+    onPaymentComplete({
+      message: `Payment process interrupted`
+    });
+
   return (
     <Modal
       visible={isVisible}
@@ -70,6 +77,9 @@ const CipsSdk = props => {
     >
       <View style={styles.container}>
         <SafeAreaView style={styles.safeAreaView}>
+        <CloseIcon 
+         onClose={_onClose}
+         />
           <ConnectIpsPayment
             source={{
               html: sourceGenerator({
