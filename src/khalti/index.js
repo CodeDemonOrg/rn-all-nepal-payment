@@ -20,7 +20,8 @@ const KhatiSdk = ({
   paymentPreference,
 }) => (
   <Modal
-    visible={isVisible}
+  visible={isVisible}
+  animationType={'slide'}
   >
     <View style={styles.container}>
       <SafeAreaView style={styles.safeAreaView}>
@@ -46,7 +47,7 @@ KhatiSdk.propTypes = {
   productName: PropTypes.string.isRequired,
   productIdentity: PropTypes.string.isRequired,
   onPaymentComplete: PropTypes.func.isRequired,
-  paymentPreference: PropTypes.string.isRequired,
+  paymentPreference: PropTypes.array.isRequired,
 };
 
 export default KhatiSdk;

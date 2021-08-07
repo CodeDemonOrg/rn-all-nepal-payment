@@ -20,7 +20,7 @@ const KhatiSdk = () => {
     <View style={styles.container}>
       <Button
         title={'Start Khalti'}
-        onPress={() => setisVisible(true)}
+        onPress={() => setIsVisible(true)}
       />
       <KhaltiWebView
         amount={100}
