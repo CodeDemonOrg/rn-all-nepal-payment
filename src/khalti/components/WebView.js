@@ -1,6 +1,6 @@
 import React from 'react';
 
-import WebView from 'common/Webview';
+import WebView from './../../common/Webview';
 import { getKhaltiHTML } from './htmlGenerator';
 
 const KhaltiWebView = ({
