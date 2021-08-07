@@ -2,11 +2,12 @@ import React from 'react';
 import { WebView } from 'react-native-webview';
 
 import Loader from './loader';
+import { styles } from 'common/styles';
 
-const EsewaPayment = ({
+const Webview = ({
   source,
   LoadingComponent,
-  onNavigationStateChange
+  ...props
 }) => {
 
   const LoadIndicatorView = () =>
@@ -14,26 +15,20 @@ const EsewaPayment = ({
 
   return (
     <WebView
+      {...props}
       source={source}
       domStorageEnabled
       javaScriptEnabled
-      style={style.flex}
       startInLoadingState
+      style={style.webView}
       originWhitelist={['*']}
       swipeDirection={['up', 'down']}
       showsVerticalScrollIndicator={false}
       showsHorizontalScrollIndicator={false}
-      onNavigationStateChange={onNavigationStateChange}
       renderLoading={!!LoadingComponent ? LoadingComponent : LoadIndicatorView}
     />
   )
 }
 
 
-export default EsewaPayment;
-
-const style = {
-  flex: {
-    flex: 1
-  }
-}
+export default Webview;
