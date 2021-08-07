@@ -6,8 +6,8 @@ import {
   SafeAreaView
 } from 'react-native';
 
-import { styles } from 'common/styles';
-import EsewaPayment from 'common/Webview';
+import { styles } from './../common/styles';
+import EsewaPayment from './../common/Webview';
 import { sourceGenerator } from './helpers/htmlGenerator';
 
 export const EsewaSdk = props => {

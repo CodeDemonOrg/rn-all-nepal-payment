@@ -1,7 +1,7 @@
 import React from 'react';
 import { WebView } from 'react-native-webview';
 
-import { styles } from 'common/styles';
+import { styles } from './styles';
 
 const Webview = ({
   source,

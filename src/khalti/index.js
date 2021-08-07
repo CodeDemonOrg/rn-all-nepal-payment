@@ -6,7 +6,7 @@ import {
   SafeAreaView
 } from 'react-native';
 
-import { styles } from 'common/styles';
+import { styles } from './../common/styles';
 import KhaltiWebView from './components/WebView';
 
 export const KhatiSdk = ({
