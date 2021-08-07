@@ -1,15 +1,17 @@
 import React from 'react';
 import {
+  View,
   Modal,
   SafeAreaView
 } from 'react-native';
 
-import EsewaPayment from 'common/payment';
+import { styles } from 'common/styles';
+import EsewaPayment from 'common/Webview';
 import { sourceGenerator } from './helpers/htmlGenerator';
 
-const index = props => {
+const EsewaSdk = props => {
   const [url, setUrl] = React.useState('');
-  const  { successURL, failedURL } =props;
+  const { successURL, failedURL } = props;
 
   React.useEffect(() => {
     _handlePaymetProcess();
@@ -48,31 +50,25 @@ const index = props => {
     <Modal
       visible={props.isVisible}
     >
-      <SafeAreaView style={styles.flex}>
-        <EsewaPayment
-          source={{
-            html: sourceGenerator({
-              amt: props.amt,
-              psc: props.psc,
-              pdc: props.pdc,
-              pid: props.pid,
-              env: props.env,
-              taxAmt: props.taxAmt,
-              totalAmt: props.totalAmt
-            })
-          }}
-          onNavigationStateChange={_onNavigationStateChange}
-        />
-      </SafeAreaView>
+      <View style={styles.container}>
+        <SafeAreaView style={styles.safeAreaView}>
+          <EsewaPayment
+            source={{
+              html: sourceGenerator({
+                amt: props.amt,
+                psc: props.psc,
+                pdc: props.pdc,
+                pid: props.pid,
+                env: props.env,
+                taxAmt: props.taxAmt,
+                totalAmt: props.totalAmt
+              })
+            }}
+            onNavigationStateChange={_onNavigationStateChange}
+          />
+        </SafeAreaView>
+      </View>
     </Modal>
   );
 }
-export default index;
-
-
-const styles = {
-  flex: {
-    flex: 1,
-    backgroundColor: 'white'
-  }
-}
+export default EsewaSdk;

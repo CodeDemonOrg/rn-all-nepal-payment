@@ -1,14 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
+  View,
   Modal,
   SafeAreaView
 } from 'react-native';
 
-import ConnectIpsPayment from 'common/payment';
+import { styles } from 'common/styles';
+import ConnectIpsPayment from 'common/Webview';
 import { sourceGenerator } from './helpers/htmlGenerator';
 
-const index = props => {
+const CipsSdk = props => {
   const [url, setUrl] = React.useState('');
   const {
     appId,
@@ -65,42 +67,35 @@ const index = props => {
     <Modal
       visible={isVisible}
     >
-      <SafeAreaView style={styles.flex}>
-        <ConnectIpsPayment
-          source={{
-            html: sourceGenerator({
-              appId,
-              txnId,
-              refId,
-              token,
-              txnAmt,
-              baseUrl,
-              txnDate,
-              appName,
-              remarks,
-              currency,
-              merchantId,
-              particulars
-            })
-          }}
-          onNavigationStateChange={_onNavigationStateChange}
-        />
-      </SafeAreaView>
+      <View style={styles.container}>
+        <SafeAreaView style={styles.safeAreaView}>
+          <ConnectIpsPayment
+            source={{
+              html: sourceGenerator({
+                appId,
+                txnId,
+                refId,
+                token,
+                txnAmt,
+                baseUrl,
+                txnDate,
+                appName,
+                remarks,
+                currency,
+                merchantId,
+                particulars
+              })
+            }}
+            onNavigationStateChange={_onNavigationStateChange}
+          />
+        </SafeAreaView>
+      </View>
     </Modal>
   );
 }
-export default index;
+export default CipsSdk;
 
-
-const styles = {
-  flex: {
-    flex: 1,
-  }
-}
-
-
-
-index.propTypes = {
+CipsSdk.propTypes = {
   appId: PropTypes.string.isRequired,
   txnId: PropTypes.string.isRequired,
   refId: PropTypes.string.isRequired,
@@ -119,6 +114,6 @@ index.propTypes = {
   onPaymentComplete: PropTypes.func
 };
 
-index.defaultProps = {
+CipsSdk.defaultProps = {
   currency: 'NPR'
 };

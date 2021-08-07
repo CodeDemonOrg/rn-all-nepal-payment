@@ -2,8 +2,9 @@ import React from 'react';
 import { WebView } from 'react-native-webview';
 
 import Loader from './loader';
+import { styles } from 'common/styles';
 
-const Payment = ({
+const Webview = ({
   source,
   LoadingComponent,
   ...props
@@ -18,8 +19,8 @@ const Payment = ({
       source={source}
       domStorageEnabled
       javaScriptEnabled
-      style={style.flex}
       startInLoadingState
+      style={style.webView}
       originWhitelist={['*']}
       swipeDirection={['up', 'down']}
       showsVerticalScrollIndicator={false}
@@ -30,10 +31,4 @@ const Payment = ({
 }
 
 
-export default Payment;
-
-const style = {
-  flex: {
-    flex: 1
-  }
-}
+export default Webview;
