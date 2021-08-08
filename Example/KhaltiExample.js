@@ -1,8 +1,9 @@
 import React from 'react';
 import { Button, SafeAreaView } from 'react-native';
+
 import { KhatiSdk } from 'rn-all-nepal-payment'
 
-const Khalti = () => {
+const KhaltiExample = () => {
   const [isVisible, setIsVisible] = React.useState(false);
 
   const _onPaymentComplete = (data) => {
@@ -27,7 +28,7 @@ const Khalti = () => {
         onPress={() => setIsVisible(true)}
       />
       <KhatiSdk
-        amount={'100'}
+        amount={100}
         isVisible={isVisible}
         paymentPreference={[
           "KHALTI",
@@ -54,4 +55,4 @@ const styles = {
   }
 }
 
-export default Khalti;
+export default KhaltiExample;

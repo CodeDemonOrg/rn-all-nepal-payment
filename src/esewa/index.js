@@ -59,28 +59,28 @@ export const EsewaSdk = props => {
     >
       <View style={styles.container}>
         <SafeAreaView style={styles.safeAreaView}>
-        <View style={styles.wrapper}>
-          <CloseIcon
-            onClose={_onClose}
-          />
+          <View style={styles.wrapper}>
+            <CloseIcon
+              onClose={_onClose}
+            />
 
-          <EsewaPayment
-            source={{
-              html: sourceGenerator({
-                amt: props.amt,
-                psc: props.psc,
-                pdc: props.pdc,
-                pid: props.pid,
-                env: props.env,
-                taxAmt: props.taxAmt,
-                successURL: successURL,
-                failureURL: failureURL,
-                totalAmt: props.totalAmt,
-              })
-            }}
-            onNavigationStateChange={_onNavigationStateChange}
-          />
-</View>
+            <EsewaPayment
+              source={{
+                html: sourceGenerator({
+                  amt: props.amt,
+                  psc: props.psc,
+                  pdc: props.pdc,
+                  pid: props.pid,
+                  env: props.env,
+                  taxAmt: props.taxAmt,
+                  successURL: successURL,
+                  failureURL: failureURL,
+                  totalAmt: props.totalAmt,
+                })
+              }}
+              onNavigationStateChange={_onNavigationStateChange}
+            />
+          </View>
         </SafeAreaView>
       </View>
     </Modal>
@@ -91,7 +91,7 @@ EsewaSdk.propTypes = {
   amt: PropTypes.number.isRequired,
   psc: PropTypes.number.isRequired,
   pdc: PropTypes.number.isRequired,
-  pid: PropTypes.number.isRequired,
+  pid: PropTypes.string.isRequired,
   env: PropTypes.string.isRequired,
   taxAmt: PropTypes.number.isRequired,
   totalAmt: PropTypes.number.isRequired,

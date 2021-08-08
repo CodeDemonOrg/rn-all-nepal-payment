@@ -3,8 +3,7 @@ import { Button, Text, SafeAreaView } from 'react-native';
 
 import { EsewaSdk } from 'rn-all-nepal-payment';
 
-
-const eSewa = () => {
+const EsewaExample = () => {
   const [isVisible, setisVisible] = React.useState(false);
   const [response, setResponse] = React.useState('');
 
@@ -31,11 +30,11 @@ const eSewa = () => {
         isVisible={isVisible}
         onPaymentComplete={_onPaymentComplete}
         pid={"ee2c3ca1-696b-4cc5-a6be-2c40d929d43"}
-        faliureURL={`http://merchant.com.np/page/esewa_payment_failed?q=fu`}
+        failureURL={`http://merchant.com.np/page/esewa_payment_failed?q=fu`}
         successURL={`http://merchant.com.np/page/esewa_payment_success?q=su`}
       />
     </SafeAreaView>
   );
 }
 
-export default eSewa;
+export default EsewaExample;

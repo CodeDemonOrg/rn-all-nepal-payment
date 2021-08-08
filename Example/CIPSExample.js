@@ -3,8 +3,7 @@ import { Button, Text, SafeAreaView } from 'react-native';
 
 import { CipsSdk } from 'rn-all-nepal-payment';
 
-
-const eSewa = () => {
+const CIPSExample = () => {
   const [isVisible, setisVisible] = React.useState(false);
   const [response, setResponse] = React.useState('');
 
@@ -58,4 +57,4 @@ const eSewa = () => {
   );
 }
 
-export default eSewa;
+export default CIPSExample;
