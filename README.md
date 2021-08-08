@@ -17,8 +17,118 @@ yarn add rn-all-nepal-payment
 # Usage
 ## CIPS
 
-## Esewa
+``` js
+import React from 'react';
+import { Button, Text, SafeAreaView } from 'react-native';
 
+import { CipsSdk } from 'rn-all-nepal-payment';
+
+const CIPSExample = () => {
+  const [isVisible, setisVisible] = React.useState(false);
+  const [response, setResponse] = React.useState('');
+
+  const _onPaymentComplete = (response) => {
+    setResponse(response);
+    setisVisible(false);
+    return
+  }
+
+  const CONFIG = {
+    MERCHANTID: "1",
+    APPID: "MER-1-APP-1",
+    APPNAME: "RN Payment Test",
+    TXNID: "120",
+    TXNDATE: "02-08-2022",
+    TXNAMT: "20000",
+    REFID: "REF-001",
+    REMARKS: "RMKS-001",
+    PARTICULARS: "PART-001",
+    TOKEN: "mpqZ3kyEBjhiGKlYMv6OXe4kT8ID5gDr6wRdfd0hAcwlOcKrJn8WHFd5t7V2OCtZrKrEu0BbQeleQbA8kj766PT6J/7eakXFZURn1gedczCovBZq7Hz79lU5KQA58WSCv3sTs3mfY8Qspaz/VbUgHJKNK6thFeNdcs8rNWfXFlfJm9V84Wem2wNC5bjwzd8tZPVHa1BHiF+8eBgOEu8vhvs1tW6VUVbOr/U3ZOZNwaG3ZCL0GUnwF8qrmSoKexj6DDZLZOKB6xMsbTnQCu6i4nn2uGwSmAS3F3kUt5+cjmd4TLURFrYw0UKAXgKlU3tRanhAEN3dOpIisSRaBjwFHQ=="
+  }
+
+  return (
+    <SafeAreaView>
+      <Button
+        title={'CIPS test'}
+        onPress={() => setisVisible(true)}
+        style={{ width: 100, height: 50, backgroundColor: 'red' }}
+      />
+      {response?.token && <Text>{`ref id: ${response.token}`}</Text>}
+
+      <CipsSdk
+        currency={'NPR'} // Default currency of choice
+        appId={CONFIG.APPID} //  App id registered with connectips
+        txnId={CONFIG.TXNID} // Transaction Id registered with connectips while creating token
+        refId={CONFIG.REFID} // Refrence ID registered with connectips while creating token
+        token={CONFIG.TOKEN} // Token generated from your private key.
+        isVisible={isVisible} // Bool to show model
+        <!--txnAmt={CONFIG.TXNAMT} //  Number in paisa
+        txnDate={CONFIG.TXNDATE} // Date of transaction
+        appName={CONFIG.APPNAME} // Name of App registered with connectips
+        remarks={CONFIG.REMARKS} // Remarks for transaction
+        merchantId={CONFIG.MERCHANTID} // Merchant Id registered with connectips
+        particulars={CONFIG.PARTICULARS} // Particulars for product
+        onPaymentComplete={_onPaymentComplete}  // Callback from connectips Web Sdk
+        baseUrl={`https://www.connectips.com/connectipsgw/loginpage`} // Base url provided by connectips
+        successURL={`https://www.connectips.com/connectipsgw/failedpage`} // Success URL registered with connectips
+        failureURL={`https://www.connectips.com/connectipsgw/successpage`} // Failure URL registered with connectips
+      />
+    </SafeAreaView>
+  );
+}
+
+export default CIPSExample;
+
+```
+**  For more information about CONNECTIPS integration please use connectips documentation. **
+
+
+## Esewa
+``` JS
+import React from 'react';
+import { Button, Text, SafeAreaView } from 'react-native';
+
+import { EsewaSdk } from 'rn-all-nepal-payment';
+
+const EsewaExample = () => {
+  const [isVisible, setisVisible] = React.useState(false);
+  const [response, setResponse] = React.useState('');
+
+  const _onPaymentComplete = (response) => {
+    setResponse(response);
+    setisVisible(false);
+    return
+  }
+
+  return (
+    <SafeAreaView>
+      <Button
+        title={'Esewa test'}
+        onPress={() => setisVisible(true)}
+        style={{ width: 100, height: 50, backgroundColor: 'red' }}
+      />
+      {response?.token && <Text>{`ref id: ${response.token}`}</Text>}
+
+      <EsewaSdk
+        amt={100} // Amount of product or item or ticket etc
+        taxAmt={5} // Tax amount on product or item or ticket etc
+        totalAmt={105} // Total payment amount including tax, service and deliver charge. [i.e tAmt = amt + txAmt + psc + tAmt]
+        env={'EPAYTEST'} // Merchant code provided by eSewa
+        isVisible={isVisible} // Bool to show modal
+        onPaymentComplete={_onPaymentComplete} //  Callback from connectips Web Sdk
+        pid={"ee2c3ca1-696b-4cc5-a6be-2c40d929d43"} // A unique ID of product or item or ticket etc
+        failureURL={`http://merchant.com.np/page/esewa_payment_failed?q=fu`} // Failure URL: a redirect URL of merchant application where customer will be redirected after FAILURE or PENDING transaction
+        successURL={`http://merchant.com.np/page/esewa_payment_success?q=su`} // Success URL: a redirect URL of merchant application where customer will be redirected after SUCCESSFUL transaction
+      />
+    </SafeAreaView>
+  );
+}
+
+export default EsewaExample;
+
+
+```
+For more information please visit [here](https://developer.esewa.com.np/#/epay).
 
 ## Khalti
 ```js
@@ -84,4 +194,39 @@ export default KhaltiExample;
 ```
 
 For more information please visit [here](https://docs.khalti.com/checkout/web/).
+
+
+## Contributing
+<a href="https://github.com/andreshsingh" target="_blank"><img src="https://avatars.githubusercontent.com/u/30138390?v=4"
+width=50
+height=50
+raw=true
+alt="Andresh Singh"
+style="border-radius: 40px;margin-top:10px" ></a>
+
+<a href="https://github.com/aanjan123" target="_blank"><img src="https://avatars.githubusercontent.com/u/19562165?v=4"
+width=50
+height=50
+raw=true
+alt="Bhuwan GOD Kandel"
+style="border-radius: 40px;margin-top:10px" ></a>
+
+<a href="https://github.com/bishwo-pratap" target="_blank"><img src="https://avatars.githubusercontent.com/u/19890839?v=4"
+width=50
+height=50
+raw=true
+alt="Bishwo Pratap Bhagat"
+style="border-radius: 40px;margin-top:10px" ></a>
+
+<a href="https://github.com/kcpradyp" target="_blank"><img src="https://avatars.githubusercontent.com/u/26624596?v=4"
+width=50
+height=50
+raw=true
+alt="Pradeep Kc"
+style="border-radius: 40px;margin-top:10px" ></a>
+
+
+## License
+
+MIT
 
