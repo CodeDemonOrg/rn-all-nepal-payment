@@ -202,23 +202,17 @@ width=50
 height=50
 raw=true
 alt="Andresh Singh"
-style="border-radius: 40px;margin-top:10px" ></a>
-
-<a href="https://github.com/aanjan123" target="_blank"><img src="https://avatars.githubusercontent.com/u/19562165?v=4"
+style="border-radius: 40px;margin-top:10px" ></a><a href="https://github.com/aanjan123" target="_blank"><img src="https://avatars.githubusercontent.com/u/19562165?v=4"
 width=50
 height=50
 raw=true
 alt="Bhuwan GOD Kandel"
-style="border-radius: 40px;margin-top:10px" ></a>
-
-<a href="https://github.com/bishwo-pratap" target="_blank"><img src="https://avatars.githubusercontent.com/u/19890839?v=4"
+style="border-radius: 40px;margin-top:10px" ></a><a href="https://github.com/bishwo-pratap" target="_blank"><img src="https://avatars.githubusercontent.com/u/19890839?v=4"
 width=50
 height=50
 raw=true
 alt="Bishwo Pratap Bhagat"
-style="border-radius: 40px;margin-top:10px" ></a>
-
-<a href="https://github.com/kcpradyp" target="_blank"><img src="https://avatars.githubusercontent.com/u/26624596?v=4"
+style="border-radius: 40px;margin-top:10px" ></a><a href="https://github.com/kcpradyp" target="_blank"><img src="https://avatars.githubusercontent.com/u/26624596?v=4"
 width=50
 height=50
 raw=true
