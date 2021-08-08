@@ -11,15 +11,15 @@
     "url": "git+https://github.com/CodeDemonOrg/rn-all-nepal-payment.git"
   },
   "keywords": [
-    "react",
     "react-native",
-    "react-component",
     "ios",
     "android",
     "payment-gateway",
-    "esew",
+    "eSewa",
     "khalti",
-    "fintech"
+    "fintech",
+    "connectIPS",
+    "Nepal-Digital-Payment"
   ],
   "author": "CodeDemon <codedemonorg@gmail.com>",
   "license": "MIT",
