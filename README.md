@@ -63,7 +63,7 @@ const CIPSExample = () => {
         refId={CONFIG.REFID} // Refrence ID registered with connectips while creating token
         token={CONFIG.TOKEN} // Token generated from your private key.
         isVisible={isVisible} // Bool to show model
-        <!--txnAmt={CONFIG.TXNAMT} //  Number in paisa
+        txnAmt={CONFIG.TXNAMT} //  Number in paisa
         txnDate={CONFIG.TXNDATE} // Date of transaction
         appName={CONFIG.APPNAME} // Name of App registered with connectips
         remarks={CONFIG.REMARKS} // Remarks for transaction
