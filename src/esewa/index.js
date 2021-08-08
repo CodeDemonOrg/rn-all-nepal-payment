@@ -6,14 +6,14 @@ import {
   SafeAreaView
 } from 'react-native';
 
-import CloseIcon from './../common/Close';
+import CloseIcon from '../common/CloseIcon';
 import { styles } from './../common/styles';
 import EsewaPayment from './../common/Webview';
 import { sourceGenerator } from './helpers/htmlGenerator';
 
 export const EsewaSdk = props => {
   const [url, setUrl] = React.useState('');
-  const { successURL, faliureURL, onPaymentComplete } = props;
+  const { successURL, failureURL, onPaymentComplete } = props;
 
   React.useEffect(() => {
     _handlePaymetProcess();
@@ -22,7 +22,7 @@ export const EsewaSdk = props => {
 
   const _handlePaymetProcess = () => {
     try {
-      if (url === faliureURL) {
+      if (url === failureURL) {
         return onPaymentComplete({
           message: `Sorry, your payment process could not be completed`
         });
@@ -59,7 +59,7 @@ export const EsewaSdk = props => {
     >
       <View style={styles.container}>
         <SafeAreaView style={styles.safeAreaView}>
-
+        <View style={styles.wrapper}>
           <CloseIcon
             onClose={_onClose}
           />
@@ -74,13 +74,13 @@ export const EsewaSdk = props => {
                 env: props.env,
                 taxAmt: props.taxAmt,
                 successURL: successURL,
-                faliureURL: faliureURL,
+                failureURL: failureURL,
                 totalAmt: props.totalAmt,
               })
             }}
             onNavigationStateChange={_onNavigationStateChange}
           />
-
+</View>
         </SafeAreaView>
       </View>
     </Modal>
@@ -96,7 +96,7 @@ EsewaSdk.propTypes = {
   taxAmt: PropTypes.number.isRequired,
   totalAmt: PropTypes.number.isRequired,
   successURL: PropTypes.string.isRequired,
-  faliureURL: PropTypes.string.isRequired,
+  failureURL: PropTypes.string.isRequired,
   onPaymentComplete: PropTypes.func.isRequired
 };
 

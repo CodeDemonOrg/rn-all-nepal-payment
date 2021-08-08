@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Text, SafeAreaView } from 'react-native';
 
-import {EsewaSdk} from './../src';
+import { EsewaSdk } from 'rn-all-nepal-payment';
 
 
 const eSewa = () => {

@@ -13,7 +13,7 @@ export const sourceGenerator = ({
   particulars
 }) => `<html>
   <body>
-    <form action="${baseUrl}" method="post" id="myForm">
+    <form action="${baseUrl}" method="post" id="myForm" hidden>
       <br>
       MERCHANT ID
       <input type="text" name="MERCHANTID" id="MERCHANTID" value="${merchantId}"/>

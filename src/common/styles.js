@@ -1,5 +1,3 @@
-import { StatusBarHeight } from './helper';
-
 export const styles = {
   container: {
     flex: 1,
@@ -11,16 +9,21 @@ export const styles = {
   webView: {
     flex: 1
   },
+  wrapper:{
+    flex:1
+  },
   iconContainer: {
-    width: 50,
-    right: 16,
-    height: 50,
+    top: 5,
+    right: 0,
+    width: 40,
+    height: 40,
     zIndex: 999,
-    top: StatusBarHeight,
     position: 'absolute'
   },
-  icon: {
+  icon:(dark) =>({
     width: '100%',
-    height: '100%'
-  }
+    height: '100%',
+    resizeMode:'contain',
+    tintColor:dark?'#000':'white'
+  })
 }
