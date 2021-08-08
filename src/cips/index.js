@@ -6,8 +6,8 @@ import {
   SafeAreaView
 } from 'react-native';
 
-import CloseIcon from './../common/Close';
 import { styles } from './../common/styles';
+import CloseIcon from './../common/CloseIcon';
 import ConnectIpsPayment from './../common/Webview';
 import { sourceGenerator } from './helpers/htmlGenerator';
 
@@ -25,7 +25,7 @@ export const CipsSdk = props => {
     remarks,
     currency,
     isVisible,
-    faliureURL,
+    failureURL,
     successURL,
     merchantId,
     particulars,
@@ -39,7 +39,6 @@ export const CipsSdk = props => {
 
   const _handlePaymetProcess = () => {
     try {
-
       if (url.startsWith(successURL)) {
 
         const splits = url.split('?');
@@ -47,7 +46,7 @@ export const CipsSdk = props => {
         let data = { token: ref[1] };
         return onPaymentComplete(data);
 
-      } else if (url.startsWith(faliureURL)) {
+      } else if (url.startsWith(failureURL)) {
         return onPaymentComplete({
           message: `Sorry, your payment process could not be completed`
         });
@@ -55,6 +54,7 @@ export const CipsSdk = props => {
       }
 
     } catch (err) {
+      // console.log({err})
       return onPaymentComplete({
         message: `Sorry, your payment process could not be completed`
       });
@@ -65,7 +65,7 @@ export const CipsSdk = props => {
     setUrl(state.url)
 
 
-  const _onClose = () => 
+  const _onClose = () =>
     onPaymentComplete({
       message: `Payment process interrupted`
     });
@@ -77,28 +77,31 @@ export const CipsSdk = props => {
     >
       <View style={styles.container}>
         <SafeAreaView style={styles.safeAreaView}>
-        <CloseIcon 
-         onClose={_onClose}
-         />
-          <ConnectIpsPayment
-            source={{
-              html: sourceGenerator({
-                appId,
-                txnId,
-                refId,
-                token,
-                txnAmt,
-                baseUrl,
-                txnDate,
-                appName,
-                remarks,
-                currency,
-                merchantId,
-                particulars
-              })
-            }}
-            onNavigationStateChange={_onNavigationStateChange}
-          />
+          <View style={styles.wrapper}>
+            <CloseIcon
+              dark
+              onClose={_onClose}
+            />
+            <ConnectIpsPayment
+              source={{
+                html: sourceGenerator({
+                  appId,
+                  txnId,
+                  refId,
+                  token,
+                  txnAmt,
+                  baseUrl,
+                  txnDate,
+                  appName,
+                  remarks,
+                  currency,
+                  merchantId,
+                  particulars
+                })
+              }}
+              onNavigationStateChange={_onNavigationStateChange}
+            />
+          </View>
         </SafeAreaView>
       </View>
     </Modal>
@@ -115,9 +118,9 @@ CipsSdk.propTypes = {
   txnDate: PropTypes.string.isRequired,
   appName: PropTypes.string.isRequired,
   remarks: PropTypes.string.isRequired,
+  isVisible: PropTypes.bool.isRequired,
   currency: PropTypes.string.isRequired,
-  isVisible: PropTypes.string.isRequired,
-  faliureURL: PropTypes.string.isRequired,
+  failureURL: PropTypes.string.isRequired,
   successURL: PropTypes.string.isRequired,
   merchantId: PropTypes.string.isRequired,
   particulars: PropTypes.string.isRequired,

@@ -1,11 +1,15 @@
-const KhatiSdk = () => {
+import React from 'react';
+import { Button, SafeAreaView } from 'react-native';
+import { KhatiSdk } from 'rn-all-nepal-payment'
+
+const Khalti = () => {
   const [isVisible, setIsVisible] = React.useState(false);
 
   const _onPaymentComplete = (data) => {
     setIsVisible(false);
     const str = data.nativeEvent.data;
     const resp = JSON.parse(str);
-    console.log({ resp })
+    // console.log({ resp })
     if (resp.event === 'CLOSED') {
       // handle closed action
     } else if (resp.event === 'SUCCESS') {
@@ -17,13 +21,13 @@ const KhatiSdk = () => {
   }
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Button
         title={'Start Khalti'}
         onPress={() => setIsVisible(true)}
       />
-      <KhaltiWebView
-        amount={100}
+      <KhatiSdk
+        amount={'100'}
         isVisible={isVisible}
         paymentPreference={[
           "KHALTI",
@@ -38,7 +42,7 @@ const KhatiSdk = () => {
         productUrl={'http://gameofthrones.wikia.com/wiki/Dragons'}
         publicKey={'test_public_key_dc74e0fd57cb46cd93832aee0a390234'}
       />
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -50,4 +54,4 @@ const styles = {
   }
 }
 
-export default KhatiSdk;
+export default Khalti;

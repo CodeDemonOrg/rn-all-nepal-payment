@@ -6,11 +6,11 @@ export const sourceGenerator = ({
   pdc = '0',
   pid,
   successURL,
-  faliureURL,
+  failureURL,
   env = `EPAYTEST`
 }) => `<html>
   <body>
-    <form id='myForm' action='https://uat.esewa.com.np/epay/main' method='POST'>
+    <form id='myForm' action='https://uat.esewa.com.np/epay/main' method='POST' hidden>
       <input value='${amt}' name='amt' type='hidden' />
       <input value='${psc}' name='psc' type='hidden' />
       <input value='${pdc}' name='pdc' type='hidden' />
@@ -28,7 +28,7 @@ export const sourceGenerator = ({
         name='su'
       />
       <input
-        value='${faliureURL}'
+        value='${failureURL}'
         type='hidden'
         name='fu'
       />
