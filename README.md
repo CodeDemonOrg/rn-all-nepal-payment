@@ -1,4 +1,5 @@
 # rn-all-nepal-payment
+![rnAllNepalPayment](https://user-images.githubusercontent.com/30138390/128639942-40b2dbc6-6184-48a9-a575-7fb360eb0b8d.jpg)
 React-native wrapper which includes all the major payment solutions in Nepal. This package implements the services in a webview in a [Modal](https://github.com/react-native-webview/react-native-webview).
 
 ## Installation
