@@ -204,30 +204,6 @@ export default KhaltiExample;
 
 For more information please visit [here](https://docs.khalti.com/checkout/web/).
 
-## Contributing
-
-<a href="https://github.com/andreshsingh" target="_blank"><img src="https://avatars.githubusercontent.com/u/30138390?v=4"
-width=50
-height=50
-raw=true
-alt="Andresh Singh"
-style="border-radius: 40px;margin-top:10px" ></a><a href="https://github.com/aanjan123" target="_blank"><img src="https://avatars.githubusercontent.com/u/19562165?v=4"
-width=50
-height=50
-raw=true
-alt="Bhuwan GOD Kandel"
-style="border-radius: 40px;margin-top:10px" ></a><a href="https://github.com/bishwo-pratap" target="_blank"><img src="https://avatars.githubusercontent.com/u/19890839?v=4"
-width=50
-height=50
-raw=true
-alt="Bishwo Pratap Bhagat"
-style="border-radius: 40px;margin-top:10px" ></a><a href="https://github.com/kcpradyp" target="_blank"><img src="https://avatars.githubusercontent.com/u/26624596?v=4"
-width=50
-height=50
-raw=true
-alt="Pradeep Kc"
-style="border-radius: 40px;margin-top:10px" ></a>
-
 ## License
 
 MIT
