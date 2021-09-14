@@ -1,6 +1,6 @@
 {
   "name": "rn-all-nepal-payment",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "All in one payment gateway",
   "main": "index.js",
   "scripts": {
